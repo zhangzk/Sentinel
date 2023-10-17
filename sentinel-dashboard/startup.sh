@@ -1,0 +1,1 @@
+java -Dserver.port=8600 -Dcsp.sentinel.dashboard.server=localhost:8600 -Dproject.name=sentinel-dashboard -Dsentinel.dashboard.ds.zookeeperRuleRootPath=sentinel_rule_config -Dsentinel.dashboard.ds.zookeeperConnectionStr=192.168.19.168:2181,192.168.19.169:2181,192.168.19.172:2181  -jar target/sentinel-dashboard.jar

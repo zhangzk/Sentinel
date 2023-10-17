@@ -63,6 +63,17 @@ public class DashboardConfig {
      * Auto remove unhealthy machine after specific period in millisecond.
      */
     public static final String CONFIG_AUTO_REMOVE_MACHINE_MILLIS = "sentinel.dashboard.autoRemoveMachineMillis";
+    
+    /**
+     * 
+     */
+    public static final String CONFIG_DS_ZOOKEEPER_RULE_ROOT_PAHT = "sentinel.dashboard.ds.zookeeperRuleRootPath";
+    
+    /**
+     * 
+     */
+    public static final String CONFIG_DS_ZOOKEEPER_CONNECTION_STR = "sentinel.dashboard.ds.zookeeperConnectionStr";
+
 
     private static final ConcurrentMap<String, Object> cacheMap = new ConcurrentHashMap<>();
     
@@ -133,6 +144,16 @@ public class DashboardConfig {
     public static int getUnhealthyMachineMillis() {
         return getConfigInt(CONFIG_UNHEALTHY_MACHINE_MILLIS, DEFAULT_MACHINE_HEALTHY_TIMEOUT_MS, 30000);
     }
+    
+    public static String getZookeeperRuleRootPath() {
+        return getConfigStr(CONFIG_DS_ZOOKEEPER_RULE_ROOT_PAHT);
+    }
+    
+    public static String getZookeeperConnectionStr() {
+        return getConfigStr(CONFIG_DS_ZOOKEEPER_CONNECTION_STR);
+    	
+    }
+    
     
     public static void clearCache() {
         cacheMap.clear();
